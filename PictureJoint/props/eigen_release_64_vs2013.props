@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <EIGEN_DIR>D:\360\src\common\inc</EIGEN_DIR>
+    <SUPERLU_DIR>D:\360\src\common\inc\SuperLU_4.2</SUPERLU_DIR>
+  </PropertyGroup>
+  <PropertyGroup>
+    <IncludePath>$(EIGEN_DIR);$(SUPERLU_DIR)\SRC;$(SUPERLU_DIR)\CBLAS;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SUPERLU_DIR)\lib\release;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <Link>
+      <AdditionalDependencies>superLU4_2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(EIGEN_DIR);$(SUPERLU_DIR)\SRC;$(SUPERLU_DIR)\CBLAS;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="EIGEN_DIR">
+      <Value>$(EIGEN_DIR)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="SUPERLU_DIR">
+      <Value>$(SUPERLU_DIR)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+  </ItemGroup>
+</Project>
