@@ -1,9 +1,9 @@
 #include <iostream>
-#include "pic_joint.h"
 #include "listAllFile.h"
 #include <vector>
 #include <string>
 #include <unordered_map>
+#include "PicJoint.h"
 using namespace std;
 
 //#define TOBEADJUSTMENT
@@ -43,3 +43,4 @@ int main()
   cvDestroyAllWindows();
   return 0;
 }
+33

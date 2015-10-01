@@ -1,6 +1,7 @@
-#include "pic_joint.h"
 #include <iostream>
 #include <vector>
+#include "PicJoint.h"
+#include <algorithm>
 using namespace std;
 using namespace tl;
 
@@ -84,3 +85,4 @@ void PicJiont::RunColorTransfer(const vector<std::string> &imagename_souce,strin
 }
 
 
+33

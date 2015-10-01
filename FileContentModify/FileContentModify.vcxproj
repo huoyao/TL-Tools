@@ -19,8 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{0444F9A3-C915-4601-A3AA-4FCC1689EEA3}</ProjectGuid>
-    <RootNamespace>PictureJoint</RootNamespace>
+    <ProjectGuid>{DD6E29D9-B584-437B-BB39-5EE00C165C9C}</ProjectGuid>
+    <RootNamespace>FileContentModify</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -63,13 +63,9 @@
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="props\eigen_debug_64_vs2013.props" />
-    <Import Project="props\opencv_debug_64_vs2013.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="props\eigen_release_64_vs2013.props" />
-    <Import Project="props\opencv_release_64_vs2013.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup />
@@ -123,16 +119,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="dirent.h" />
-    <ClInclude Include="listAllFile.h" />
-    <ClInclude Include="PicJoint.h" />
+    <ClInclude Include="FileContentModify.h" />
+    <ClInclude Include="ListAllFiles.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="listAllFile.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="PicJoint.cpp" />
+    <ClCompile Include="FileContentModify.cpp" />
+    <ClCompile Include="ListAllFiles.cpp" />
+    <ClCompile Include="run.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
 </Project>
-33

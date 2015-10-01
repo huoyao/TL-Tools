@@ -11,26 +11,25 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ListAllFiles.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
     <ClInclude Include="dirent.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="listAllFile.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="PicJoint.h">
+    <ClInclude Include="FileContentModify.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="listAllFile.cpp">
+    <ClCompile Include="ListAllFiles.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="FileContentModify.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="PicJoint.cpp">
+    <ClCompile Include="run.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
-33
