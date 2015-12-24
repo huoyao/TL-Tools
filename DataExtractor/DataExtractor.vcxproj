@@ -19,8 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{0444F9A3-C915-4601-A3AA-4FCC1689EEA3}</ProjectGuid>
-    <RootNamespace>PictureJoint</RootNamespace>
+    <ProjectGuid>{A85BCD53-46FA-4BBA-9CF4-DBF6CDACF6D9}</ProjectGuid>
+    <RootNamespace>DataExtractor</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -63,13 +63,9 @@
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="props\eigen_debug_64_vs2013.props" />
-    <Import Project="props\opencv_debug_64_vs2013.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="props\eigen_release_64_vs2013.props" />
-    <Import Project="props\opencv_release_64_vs2013.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup />
@@ -122,14 +118,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="dirent.h" />
-    <ClInclude Include="listAllFile.h" />
-    <ClInclude Include="PicJoint.h" />
+    <ClInclude Include="DataExtract.h" />
+    <ClInclude Include="Dirent.h" />
+    <ClInclude Include="ListAllFile.h" />
+    <ClInclude Include="TimeExtractor.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="listAllFile.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="PicJoint.cpp" />
+    <ClCompile Include="DataExtract.cpp" />
+    <ClCompile Include="DataTest.cpp" />
+    <ClCompile Include="ListAllFile.cpp" />
+    <ClCompile Include="TimeExtractor.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -43,4 +43,3 @@ int main()
   cvDestroyAllWindows();
   return 0;
 }
-33

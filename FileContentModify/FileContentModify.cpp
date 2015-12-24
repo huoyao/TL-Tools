@@ -21,9 +21,9 @@ void FileContentModify::InsertIntoFile()
 {
   sort(insert_content_.begin(), insert_content_.end(),
        [](const pair<int, string> &a, const pair<int, string>&b) { return a.first < b.first; });
-  int file_num = all_files_.GetFileNum();
+  size_t file_num = all_files_.GetFileNum();
   if(insert_content_.size() < 1) return;
-  for (int i = 0; i < file_num; ++i)
+  for (size_t i = 0; i < file_num; ++i)
   {
     string name = all_files_.getFileName(i);
     ifstream ifs(name);

@@ -1,1 +1,3 @@
 *.opensdf
+/x64/Release
+*.sdf

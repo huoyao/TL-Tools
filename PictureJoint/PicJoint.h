@@ -26,4 +26,3 @@ namespace tl
     cv::Mat image_target_;
   };
 }
-33

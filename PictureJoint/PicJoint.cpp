@@ -83,6 +83,3 @@ void PicJiont::RunColorTransfer(const vector<std::string> &imagename_souce,strin
   output_pth += imagename_souce[0].substr(imagename_souce[0].length() - 8, imagename_souce[0].length());
   cv::imwrite(output_pth, image_target_);
 }
-
-
-33
