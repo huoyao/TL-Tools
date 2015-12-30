@@ -36,7 +36,7 @@ private:
   std::unordered_map<std::string, size_t> str_map_int;
   std::unordered_set<std::string> need_int;
   std::unordered_set<std::string> need_doule;
-  std::string file_path,out_dir,file_name;
+  std::string file_path,out_dir,file_name,file_type;
 };
 
 
