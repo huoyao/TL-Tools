@@ -12,7 +12,7 @@ TimeExtractor::~TimeExtractor() {
 }
 
 void TimeExtractor::init() {
-  int num_double = prefix_double.size(), num_int = prefix_int.size();
+  size_t num_double = prefix_double.size(), num_int = prefix_int.size();
   for(size_t i = 0;i < num_double;++i)
     str_map_double[prefix_double[i]] = i;
   for(size_t i = 0;i < num_int;++i)
@@ -58,8 +58,8 @@ void TimeExtractor::ExtractTime(const std::string &file) {
 }
 
 void TimeExtractor::GenerateOutDir(const std::string&file) {
-  int pos=file.find_last_of("\\");
-  int dot_pos = file.find_last_of(".");
+  size_t pos=file.find_last_of("\\");
+  size_t dot_pos = file.find_last_of(".");
   out_dir = file.substr(0, pos);
   file_name = file.substr(pos + 1, dot_pos-pos-1)+"-";
 }
@@ -73,7 +73,8 @@ bool TimeExtractor::FindValueInALine(const string &str_word, bool &is_int, int &
   return true;
 }
 
-void TimeExtractor::Out2FileDouble(const vector<string> &prefix_double, const vector<double> res_t[], const int &i) {
+void TimeExtractor::Out2FileDouble(const vector<string> &prefix_double, const vector<double> res_t[], const size_t &i) {
+  if(res_t[i].size() < 1) return;
   string filename = out_dir+"\\";
   filename = filename +file_name+ prefix_double[i].substr(0, prefix_double[i].size() - 1) + ".txt";
   ofstream ofs(filename);
@@ -82,7 +83,8 @@ void TimeExtractor::Out2FileDouble(const vector<string> &prefix_double, const ve
   ofs.close();
 }
 
-void TimeExtractor::Out2FileInt(const vector<string> &prefix_double, const vector<int> res_t[], const int &i) {
+void TimeExtractor::Out2FileInt(const vector<string> &prefix_double, const vector<int> res_t[], const size_t &i) {
+  if(res_t[i].size() < 1) return;
   string filename = out_dir + "\\";
   filename = filename +file_name+ prefix_double[i].substr(0, prefix_double[i].size()) + ".txt";
   ofstream ofs(filename);
