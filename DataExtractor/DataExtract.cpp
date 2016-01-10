@@ -3,39 +3,40 @@
 #include <iostream>
 using namespace std;
 
-DataExtract::DataExtract()
-{
+DataExtract::DataExtract() {
 }
 
-DataExtract::~DataExtract()
-{
+DataExtract::~DataExtract() {
   ifs.close();
   ofs.close();
 }
 
-DataExtract::DataExtract(const std::string& file_in, const std::string &file_out,
-                         const char &c,const int&method):input_file_name(file_in),
-                         output_file_name(file_out),
+DataExtract::DataExtract(const std::string& file_in, const std::string &op_type,
+                         const char &c):
                          separator(c),
-                         ofs(file_out),
-                         ifs(file_in)
-{
-  switch(method)
-  {
+                         ifs(file_in) {
+  ofs.open(op_type + "-" + file_in);
+  op_map["increase"] = 0;
+  op_map["increseFirst"] = 1;
+  switch(op_map[op_type]) {
   case 0:
-    func_ptr = &DataExtract::increase;
+    func_ptr = &DataExtract::Increase;
+    break;
+  case 1:
+    func_ptr = &DataExtract::IncreaseFirstNumber;
+    break;
   default:
+    ErrorOutput();
     break;
   }
 }
 
-void DataExtract::increase(string &line)
-{
+// 0
+void DataExtract::Increase(const string &line) {
   istringstream isstr(line);
   int tmp;
   char c;
-  while(isstr >> tmp)
-  {
+  while(isstr >> tmp) {
     ++tmp;
     ofs << tmp;
     isstr >> c;
@@ -43,11 +44,29 @@ void DataExtract::increase(string &line)
   }
 }
 
-void DataExtract::opOnString()
-{
+// 1
+void DataExtract::IncreaseFirstNumber(const std::string &line) {
+  istringstream isstr(line);
+  int tmp;
+  isstr >> tmp;
+  ++tmp;
+  ofs << tmp;
+  ofs << " ";
+  string str;
+  while(isstr >> str) {
+    ofs << str;
+  }
+}
+
+
+// default
+void DataExtract::ErrorOutput() {
+  cout << "parameters error!\n";
+}
+
+void DataExtract::OpOnString() {
   string line;
-  while(getline(ifs, line))
-  {
+  while(getline(ifs, line)) {
     (this->*func_ptr)(line);
   }
 }
